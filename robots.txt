@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# NOTE: switch this URL to https://rockfortindustries.com/sitemap.xml when the domain goes live
+Sitemap: https://rockfort-metals.rockfortmetals.workers.dev/sitemap.xml
