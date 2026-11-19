@@ -1,0 +1,66 @@
+:root {
+  --primary: #14b8a6;
+  --primary-dark: #0d9488;
+  --dark: #111827;
+  --darker: #0f172a;
+  --card: #1f2937;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; color: var(--text); background: var(--darker); }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+
+header { background: var(--dark); border-bottom: 3px solid var(--primary); padding: 1rem 0; position: sticky; top: 0; z-index: 100; }
+header .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-weight: 700; font-size: 1.4rem; color: white; letter-spacing: -0.5px; }
+.logo span { color: var(--primary); }
+nav a { color: var(--text); margin-left: 1.8rem; text-decoration: none; font-weight: 500; }
+nav a:hover { color: var(--primary); }
+
+.hero { background: linear-gradient(135deg, #0f172a 0%, #134e4a 100%); padding: 6rem 0 5rem; text-align: center; position: relative; }
+.hero h1 { font-size: 2.8rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.2; }
+.hero p { font-size: 1.25rem; color: var(--muted); margin-bottom: 2rem; }
+.btn { display: inline-block; background: var(--primary); color: white; padding: 0.9rem 2rem; text-decoration: none; border-radius: 6px; font-weight: 600; transition: background 0.2s; }
+.btn:hover { background: var(--primary-dark); }
+.btn-outline { background: transparent; border: 2px solid var(--primary); margin-left: 1rem; }
+.btn-outline:hover { background: var(--primary); }
+
+section { padding: 4rem 0; }
+h2 { font-size: 2rem; margin-bottom: 1.5rem; color: white; text-align: center; }
+h2 span { color: var(--primary); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.8rem; margin-top: 2rem; }
+.card { background: var(--card); padding: 2rem; border-radius: 12px; border-top: 4px solid var(--primary); transition: transform 0.2s; }
+.card:hover { transform: translateY(-4px); }
+.card h3 { color: var(--primary); margin-bottom: 0.8rem; font-size: 1.3rem; }
+
+.stats { background: var(--dark); text-align: center; }
+.stats .grid { grid-template-columns: repeat(3, 1fr); }
+.stat { font-size: 2.5rem; font-weight: 700; color: var(--primary); }
+.stat-label { color: var(--muted); }
+
+.testimonials { background: var(--darker); }
+.testimonial { background: var(--card); padding: 1.8rem; border-radius: 10px; margin-bottom: 1rem; border-left: 4px solid var(--primary); }
+.testimonial p { font-style: italic; margin-bottom: 0.8rem; }
+.testimonial .author { color: var(--primary); font-weight: 600; }
+
+.why-us ul { max-width: 700px; margin: 2rem auto 0; list-style: none; }
+.why-us li { background: var(--card); margin-bottom: 0.8rem; padding: 1rem 1.2rem; border-radius: 8px; border-left: 4px solid var(--primary); }
+
+.page-header { background: linear-gradient(135deg, #0f172a, #134e4a); padding: 4rem 0; text-align: center; }
+.service-detail, .about-content, .contact { max-width: 800px; margin: 0 auto; }
+.service-detail h2, .about-content h2 { text-align: left; margin-top: 2.5rem; }
+.service-detail ul, .about-content ul { margin: 1rem 0 1rem 1.5rem; color: var(--text); }
+
+footer { background: var(--dark); border-top: 3px solid var(--primary); text-align: center; padding: 2.5rem 0; color: var(--muted); }
+footer a { color: var(--primary); }
+
+@media (max-width: 768px) {
+  header .container { flex-direction: column; gap: 1rem; }
+  nav a { margin: 0 0.6rem; }
+  .hero h1 { font-size: 2rem; }
+  .stats .grid { grid-template-columns: 1fr; gap: 2rem; }
+  .btn-outline { margin-left: 0; margin-top: 1rem; display: block; }
+}
