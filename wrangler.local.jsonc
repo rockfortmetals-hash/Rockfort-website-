@@ -1,0 +1,30 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  // Local-only copy of wrangler.jsonc. Workers AI has no offline simulator, so
+  // this file omits the AI binding and `npm run dev` uses the scripted front
+  // desk. Production deploys use wrangler.jsonc, which keeps the AI binding.
+  // The Worker name stays rockfort-metals.
+  "name": "rockfort-metals",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-18",
+  "assets": {
+    "directory": ".",
+    "binding": "ASSETS",
+    "html_handling": "auto-trailing-slash",
+    "run_worker_first": true
+  },
+  "vars": {
+    "LEAD_FROM": "quotes@rockfortindustries.com",
+    "ASSISTANT_MODE": "scripted"
+  },
+  "send_email": [
+    { "name": "EMAIL" }
+  ],
+  "ratelimits": [
+    {
+      "name": "CHAT_RATE_LIMIT",
+      "namespace_id": "482173",
+      "simple": { "limit": 30, "period": 60 }
+    }
+  ]
+}
