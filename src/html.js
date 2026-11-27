@@ -11,7 +11,10 @@ const TEL_ANCHOR = new RegExp(
   "gi",
 );
 const WA_ANCHOR = /<a\b[^>]*(?:wa\.me|api\.whatsapp\.com|whatsapp-float)[^>]*>[\s\S]*?<\/a>/gi;
-const TELEPHONE_KEY = /"telephone"\s*:\s*"[^"]*"\s*,?\s*/g;
+const TELEPHONE_KEY = new RegExp(
+  '"telephone"\\s*:\\s*"[^"]*(?:\\+?' + INTL + "|" + LOCAL + ')[^"]*"\\s*,?\\s*',
+  "gi",
+);
 const CHAT_TAG = '<script src="/js/front-desk.js" defer></script>';
 
 export function prepareHtml(html) {
