@@ -52,6 +52,13 @@ test("html rewrite strips a leftover WhatsApp button and injects the shared scri
   assert.match(clean, /connect@rockfortindustries.com/);
 });
 
+test("html rewrite keeps the office landline in JSON-LD", () => {
+  const html = '<html><body><script type="application/ld+json">{"telephone":"+603-3341 0644","email":"connect@rockfortindustries.com"}</script></body></html>';
+  const clean = prepareHtml(html);
+  assert.match(clean, /"telephone":"\+603-3341 0644"/);
+  assert.match(clean, /\/js\/front-desk\.js/);
+});
+
 test("a quote conversation collects a lead and the email is ready to quote", () => {
   const turns = [
     "Hi, can you thermal spray a worn pump shaft?",
