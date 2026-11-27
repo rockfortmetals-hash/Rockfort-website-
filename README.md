@@ -16,3 +16,12 @@ A clean, SEO-friendly static website based on the existing rockfortindustries.co
 4. Later, this content can be migrated into WordPress if preferred.
 
 All content is ready to copy-paste into your current WordPress site as well.
+
+## Front desk chat
+Visitors ask questions and leave quote details in the chat button, which is added to every page with:
+
+```html
+<script src="/js/front-desk.js" defer></script>
+```
+
+The same line is in `partials/front-desk.html`. The Worker injects it when a page does not have it, including the SEO landing pages, and strips old direct-message buttons. Run `npm test` and `npm run dev` locally. The inbox, Turnstile keys, and Email Sending steps are in `docs/front-desk-setup.md`. Do not commit secrets.

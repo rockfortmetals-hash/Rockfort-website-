@@ -1,0 +1,12 @@
+{
+  "name": "rockfort-metals",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --local --config wrangler.local.jsonc --port 8787 --ip 127.0.0.1",
+    "test": "node --test test/"
+  },
+  "devDependencies": {
+    "wrangler": "^4.50.0"
+  }
+}
